@@ -23,9 +23,14 @@ public class Blocks : MonoBehaviour
             numberOfHits++;
             if (numberOfHits == hitsToKill)
             {
+                // get reference of player object 
+                GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+                // send message 
+                player.SendMessage("addPoints", points);
                 // destroy the object 
                 Destroy(this.gameObject);
             }
         }
     }
+
 }

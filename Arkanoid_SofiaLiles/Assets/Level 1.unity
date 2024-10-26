@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 54492895}
   m_Layer: 0
   m_Name: Mordor
-  m_TagString: Untagged
+  m_TagString: Mordor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,6 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920839980}
+  - component: {fileID: 920839981}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1115,6 +1116,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920839981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920839979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323a5e000e8fffb408272d16027c24e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
 --- !u!1 &983376241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2029550649484848991, guid: f0ddb5bea9d799942a840e04c071105c, type: 3}
