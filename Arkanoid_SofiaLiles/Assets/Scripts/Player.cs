@@ -1,20 +1,22 @@
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float playerVelocity;
     private Vector3 playerPosition;
     [SerializeField] private float boundary; // Use SerializeField for private access
-    private int playerLives;
-    private int playerPoints;
+
+    public Rigidbody2D rigibody2D;
+    Vector2 startPosition;
 
     // Use this for initialization 
     void Start()
     {
+
         // Get the initial position of the game object 
         playerPosition = gameObject.transform.position;
-        playerLives = 3;
-        playerPoints = 0;
+
+        startPosition = transform.position;
     }
 
     // Update is called once per frame 
@@ -24,7 +26,7 @@ public class PlayerScript : MonoBehaviour
         float mouseX = Input.mousePosition.x;
         // Convert mouse position to world position
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseX, 0, Camera.main.nearClipPlane));
-
+       
         // Update player position based on mouse position
         playerPosition.x = mouseWorldPosition.x;
 
@@ -47,22 +49,11 @@ public class PlayerScript : MonoBehaviour
             Application.Quit();
         }
     }
-
-    // Method to add points
-    public void AddPoints(int points)
+    public void ResetPlayer()
     {
-        playerPoints += points;
-        Debug.Log("Player Points: " + playerPoints);
+        transform.position = startPosition;
+        Vector2 zero = Vector2.zero;
+        rigibody2D.velocity = zero;
     }
 
-    // Optional: Method to reset player position
-    public void ResetPosition(Vector3 newPosition)
-    {
-        transform.position = newPosition;
-    }
-    void OnGUI()
-    {
-        GUI.Label(new Rect(5.0f, 3.0f, 200.0f, 200.0f), "Live's: " + playerLives + " Score: " + playerPoints);
-
-    }
 }
