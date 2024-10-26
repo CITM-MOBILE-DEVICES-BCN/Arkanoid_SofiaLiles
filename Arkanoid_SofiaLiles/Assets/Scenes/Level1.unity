@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 54492895}
   m_Layer: 0
   m_Name: Mordor
-  m_TagString: Untagged
+  m_TagString: Mordor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 54492894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.079906, y: -5.03, z: -0.00962551}
+  m_LocalPosition: {x: -0.079906, y: -5.26, z: -0.00962551}
   m_LocalScale: {x: 6.6770105, y: 0.69691354, z: 1.4419}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerVelocity: 0.3
   boundary: 2.48
+  rigibody2D: {fileID: 1777888054}
 --- !u!61 &388345925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1109,10 +1110,11 @@ Transform:
   m_GameObject: {fileID: 920839979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.00054462, y: -0.43902, z: 0.0000000092196}
+  m_LocalScale: {x: 1.1768, y: 1.1768, z: 1.1768}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1279809811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983376241 stripped
@@ -1403,7 +1405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279809810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.44964, y: 0.90251, z: 0.051041}
   m_LocalScale: {x: 0.87036, y: 0.87036, z: 0.87036}
   m_ConstrainProportionsScale: 0
@@ -1426,7 +1428,7 @@ Transform:
   - {fileID: 339387083}
   - {fileID: 1178542224}
   - {fileID: 692002736}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 920839980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383569798 stripped
 GameObject:
@@ -1643,7 +1645,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 0.06, z: 0}
-  m_LocalScale: {x: 3.0192792, y: 4.190696, z: 1}
+  m_LocalScale: {x: 3.6168323, y: 4.190696, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1915,6 +1917,7 @@ GameObject:
   - component: {fileID: 1777888052}
   - component: {fileID: 1777888054}
   - component: {fileID: 1777888053}
+  - component: {fileID: 1777888055}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -1962,7 +1965,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 61b6698d0617e3247b1bb6345e66720a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2036,7 +2039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4be6a6591ab51b469c2cc741b265ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 1777888054}
+  rigidBody2D: {fileID: 1777888054}
   speed: 300
 --- !u!50 &1777888054
 Rigidbody2D:
@@ -2065,6 +2068,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1777888055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777888049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323a5e000e8fffb408272d16027c24e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
 --- !u!1001 &1825723023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2449,6 +2465,5 @@ SceneRoots:
   - {fileID: 1710776937}
   - {fileID: 1275619615}
   - {fileID: 1167586509}
-  - {fileID: 1279809811}
   - {fileID: 54492896}
   - {fileID: 920839980}
