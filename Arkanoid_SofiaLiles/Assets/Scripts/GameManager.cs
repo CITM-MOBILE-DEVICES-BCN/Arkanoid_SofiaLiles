@@ -26,4 +26,6 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<Ball>().ResetBall();
         FindObjectOfType<Player>().ResetPlayer();
     }
+
+  
 }
